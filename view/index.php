@@ -11,7 +11,7 @@
 <body>
     <h1>Página Inicial</h1>
     <br><button><a href="cadastrarPessoa.php">Cadastrar</a></button>
-    <br><button><a href="">Consultar</a></button>
+    <br><button><a href="enderecoPessoa.php">Consultar</a></button>
     <br><button><a href="">Atualizar</a></button>
     <br><button><a href="">Excluir  </a></button>
 </body>

@@ -1,5 +1,7 @@
 <?php
     namespace Projeto\model; // caminho de diretorios //Determinando o local de arquivo Pessoa
+    require_once('Endereco.php');
+    use Projeto\model\Endereco;
 
     class Pessoa{ //O "Pessoa" é a mãe
         //public -> Todo mundo visualiza
@@ -11,22 +13,22 @@
         private string $nome;
         private float $cpf;
         private string $telefone;
-        private string $endereco;
-        private boolean $status; //true or false
+        private Endereco $endereco;
+        private bool $status; //true or false
 
-        //Primeiro método de qualquer classe
-        public function __construct(){ //Quando tem-se parenteses é um método
-            //This -> isso
-            $this->codigo = 0;
-            $this->nome = "";
-            $this->cpf = 0;
-            $this->telefone = "";
-            $this->endereco = "";
-            //$this->dtNascimento = new DateTime(); //0000-00-00 00.00.00
-            $this->status = true;
-        }//fim do método construtor
+        //Primeiro método de qualquer classe // Esse não precisa
+        // public function __construct(){ //Quando tem-se parenteses é um método
+        //     //This -> isso
+        //     $this->codigo = 0;
+        //     $this->nome = "";
+        //     $this->cpf = 0;
+        //     $this->telefone = "";
+        //     $this->endereco = "";
+        //     //$this->dtNascimento = new DateTime(); //0000-00-00 00.00.00
+        //     $this->status = true;
+        // }//fim do método construtor
 
-        public function __construct(int $codigo, string $nome, float $cpf, string $telefone, string $endereço, boolean $status){
+        public function __construct(int $codigo, string $nome, float $cpf, string $telefone, Endereco $endereco, bool $status){
             $this->codigo = $codigo;
             $this->nome = $nome;
             $this->cpf = $cpf;
@@ -50,7 +52,7 @@
                    "<br>Nome: ".$this->nome.
                    "<br>CPF: ".$this->cpf.
                    "<br>Telefone: ".$this->telefone.
-                   "<br>Endereço: ".$this->endereco.
+                   "<br>Endereço: ".$this->endereco->imprimir().
                    "<br>Status: ".$this->status;
         }//fim do método
 
